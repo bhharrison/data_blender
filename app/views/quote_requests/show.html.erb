@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = QuoteRequest -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => QuoteRequest %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @quote_request.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:website) %></dt>
+      <dd><pre class="prettyprint"><%= @quote_request.website %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:callback) %></dt>
+      <dd><pre class="prettyprint"><%= @quote_request.callback %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @quote_request.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:hours) %></dt>
+      <dd><pre class="prettyprint"><%= @quote_request.hours %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:cost) %></dt>
+      <dd><pre class="prettyprint"><%= @quote_request.cost %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:nte) %></dt>
+      <dd><pre class="prettyprint"><%= @quote_request.nte %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @quote_request.website %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              quote_requests_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_quote_request_path(@quote_request), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              quote_request_path(@quote_request),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Callback:</strong>
-  <%= @quote_request.callback %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @quote_request.description %>
-</p>
-
-<p>
-  <strong>Hours:</strong>
-  <%= @quote_request.hours %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= @quote_request.cost %>
-</p>
-
-<p>
-  <strong>Nte:</strong>
-  <%= @quote_request.nte %>
-</p>
-
-<%= link_to 'Edit', edit_quote_request_path(@quote_request) %> |
-<%= link_to 'Back', quote_requests_path %>
