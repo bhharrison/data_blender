@@ -29,6 +29,7 @@ class QuoteRequestsController < ApplicationController
   # POST /quote_requests.json
   def create
     @quote_request = QuoteRequest.new(quote_request_params)
+    @quote_request.user = current_user
 
     respond_to do |format|
       if @quote_request.save
