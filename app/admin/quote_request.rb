@@ -1,4 +1,5 @@
 ActiveAdmin.register QuoteRequest do
+  permit_params :website, :callback, :description, :hours, :cost, :nte
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
