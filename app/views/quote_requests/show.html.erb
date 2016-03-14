@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @quote_request.user %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @quote_request.website %>
+</p>
+
+<p>
+  <strong>Callback:</strong>
+  <%= @quote_request.callback %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @quote_request.description %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @quote_request.hours %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @quote_request.cost %>
+</p>
+
+<p>
+  <strong>Nte:</strong>
+  <%= @quote_request.nte %>
+</p>
+
+<%= link_to 'Edit', edit_quote_request_path(@quote_request) %> |
+<%= link_to 'Back', quote_requests_path %>
